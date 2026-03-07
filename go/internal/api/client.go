@@ -69,8 +69,9 @@ func NewClient(token string) *Client {
 func (c *Client) Search(query string, searchType string) ([]SearchResult, error) {
 	searchURL := fmt.Sprintf("%s/database/search", c.baseURL)
 
-	println("Performing search with query:", query, "and type:", searchType)
-	println("Using token:", searchURL)
+	fmt.Println("Performing search with query:", query)
+	fmt.Println("Search type:", searchType)
+	fmt.Println("Using token:", searchURL)
 
 	params := url.Values{}
 	params.Add("q", query)

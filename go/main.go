@@ -7,9 +7,16 @@ import (
 
 	tea "github.com/charmbracelet/bubbletea"
 	"github.com/joefearnley/tiscogs/internal/ui"
+	"github.com/joho/godotenv"
 )
 
 func main() {
+
+	err := godotenv.Load()
+	if err != nil {
+		log.Fatal("Error loading .env file")
+	}
+
 	// Check for Discogs API token
 	token := os.Getenv("DISCOGS_TOKEN")
 	if token == "" {
