@@ -12,4 +12,8 @@ renderer.root.add(input)
 
 input.on(InputRenderableEvents.CHANGE, (value: string) => {
   console.log("Value committed:", value)
-})
+});
+
+input.on(InputRenderableEvents.ENTER, (value: string) => {
+  console.log("Submitted value:", value)
+});
